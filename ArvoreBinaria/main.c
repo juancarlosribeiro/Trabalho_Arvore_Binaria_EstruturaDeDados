@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include "binary_tree.h"
+#include "binarytree.h"
 
 int main() {
     Node* root = NULL;
