@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include "binary_tree.h"
 
-int main(int argc, char *argv[])
+int main(int argc, char* argv[])
 {
     Node *node = NULL;   
     inserir(&node, 5);
