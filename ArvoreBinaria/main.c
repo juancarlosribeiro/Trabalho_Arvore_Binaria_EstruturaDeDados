@@ -1,51 +1,41 @@
 #include <stdio.h>
-#include "binarytree.h"
+#include <stdlib.h>
+#include "binary_tree.h"
 
-int main() {
-    Node* root = NULL;
+int main(int argc, char *argv[])
+{
+    Node *node = NULL;   
+    inserir(&node, 5);
+    inserir(&node, 8);
+    inserir(&node, 7);
+    inserir(&node, 3);
+    inserir(&node, 4);
+    inserir(&node, 6);
+    inserir(&node, 2);
+    inserir(&node, 1);
+    inserir(&node, 9);
+    inserir(&node, 10);
+    inserir(&node, 5);
 
-    root = insertNode(root, 50);
-    insertNode(root, 30);
-    insertNode(root, 20);
-    insertNode(root, 40);
-    insertNode(root, 70);
-    insertNode(root, 60);
-    insertNode(root, 80);
+    printf("o numero 5 esta? %d\n", buscar(node, 5));
+    printf("o numero 3 esta? %d\n", buscar(node, 3));
+    printf("o numero 0 esta? %d\n", buscar(node, 0));
 
-    printf("In-order traversal: ");
-    inOrder(root);
+    in_order(node);
     printf("\n");
-
-    printf("Pre-order traversal: ");
-    preOrder(root);
+    pre_order(node);
     printf("\n");
+    post_order(node);
 
-    printf("Post-order traversal: ");
-    postOrder(root);
+    remover(&node, 8);
+    remover(&node, 5);
+    remover(&node, 1);
+    
     printf("\n");
-
-    int key = 40;
-    Node* foundNode = searchNode(root, key);
-    if (foundNode != NULL) {
-        printf("Node %d found in the tree.\n", key);
-    } else {
-        printf("Node %d not found in the tree.\n", key);
-    }
-
-    root = deleteNode(root, 20);
-    printf("In-order traversal after deleting 20: ");
-    inOrder(root);
+    in_order(node);
     printf("\n");
-
-    root = deleteNode(root, 30);
-    printf("In-order traversal after deleting 30: ");
-    inOrder(root);
+    pre_order(node);
     printf("\n");
-
-    root = deleteNode(root, 50);
-    printf("In-order traversal after deleting 50: ");
-    inOrder(root);
-    printf("\n");
-
+    post_order(node);
     return 0;
 }
